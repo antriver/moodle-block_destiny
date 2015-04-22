@@ -21,9 +21,6 @@ class Destiny
 
 	function __construct()
 	{
-		global $CFG;
-        // TODO: Change to settings via admin panel
-		$this->config = $CFG->destiny; #require __DIR__ . '/config.php';
 		$this->connectToDb();
 	}
 
@@ -32,10 +29,15 @@ class Destiny
 	 */
 	private function connectToDb()
 	{
+        $dbHost = get_config('block_destiny', 'db_host');
+        $dbName = get_config('block_destiny', 'db_name');
+        $dbUser = get_config('block_destiny', 'db_user');
+        $dbPass = get_config('block_destiny', 'db_pass');
+
 		$this->db = new PDO(
-			"dblib:host={$this->config['DB_HOST']};dbname={$this->config['DB_NAME']}",
-			$this->config['DB_USER'],
-			$this->config['DB_PASS']
+			"dblib:host={$dbHost};dbname={$dbName}",
+			$dbUser,
+			$dbPass
 		);
 		$this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
 		$this->db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
