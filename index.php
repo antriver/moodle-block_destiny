@@ -35,7 +35,7 @@ if (empty($idnumber)) {
 }
 
 // Create Destiny access object
-$destiny = new block_destiny\Destiny();
+$destiny = new \block_destiny\Destiny();
 
 // FIXME: SSIS specific
 // Is the user a parent on a "normal" user?
