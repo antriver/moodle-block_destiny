@@ -13,7 +13,7 @@ $string['page_heading'] = 'Library';
 
 $string['no_id_number'] = 'Your account does not have an idnumber set.';
 $string['intro_text'] = 'Listed below are your checked out library resources.';
-$string['parent_intro_text'] = 'Listed below are your family\'s checked out library resources.';
+$string['multiple_intro_text'] = 'Listed below are your family\'s checked out library resources.';
 
 // Table headings
 $string['patron_column_heading'] = 'Patron';
