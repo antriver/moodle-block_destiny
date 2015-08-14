@@ -1,13 +1,26 @@
 <?php
+// This file is part of Moodle - http://moodle.org/
+//
+// Moodle is free software: you can redistribute it and/or modify
+// it under the terms of the GNU General Public License as published by
+// the Free Software Foundation, either version 3 of the License, or
+// (at your option) any later version.
+//
+// Moodle is distributed in the hope that it will be useful,
+// but WITHOUT ANY WARRANTY; without even the implied warranty of
+// MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+// GNU General Public License for more details.
+//
+// You should have received a copy of the GNU General Public License
+// along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
  * @package    block_destiny
- * @copyright  Anthony Kuske <www.anthonykuske.com>
+ * @copyright  2015 Anthony Kuske <www.anthonykuske.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
  */
 
-// Load Moodle
-require_once dirname(dirname(dirname(__FILE__))) .  '/config.php';
+require_once(dirname(dirname(dirname(__FILE__))) .  '/config.php');
 
 // Show page header
 $PAGE->set_context(context_system::instance());
@@ -20,36 +33,35 @@ echo $OUTPUT->header();
 require_login();
 
 // Create Destiny access object
-$destiny = new \block_destiny\Destiny();
-
+$destiny = new \block_destiny\local\destiny();
 
 /**
  * Who are we going to show...
  */
-$idNumbers = $destiny->getIdNumbers();
+$idnumbers = $destiny->get_idnumbers();
 
-if (count($idNumbers) > 1) {
-    $introText = get_string('multiple_intro_text', 'block_destiny');
+if (count($idnumbers) > 1) {
+    $introtext = get_string('multiple_intro_text', 'block_destiny');
 } else {
-    $introText = get_string('intro_text', 'block_destiny');
+    $introtext = get_string('intro_text', 'block_destiny');
 }
 
 ?>
 
 <div class="alert alert-info">
     <i class="fa fa-book pull-left fa-2x"></i>
-    <p><?php echo $introText; ?></p>
+    <p><?php echo $introtext; ?></p>
 </div>
 
 <br/>
 
 <?php
 
-foreach ($idNumbers as $idNumber => $name) {
+foreach ($idnumbers as $idnumber => $name) {
 
     echo '<h2>' . $name . '</h2>';
 
-    $data = $destiny->getUsersCheckedOutBooks($idNumber);
+    $data = $destiny->get_users_checked_out_books($idnumber);
 
     ?>
     <table class="table table-striped">
@@ -71,7 +83,7 @@ foreach ($idNumbers as $idNumber => $name) {
                 <td><p><?php echo $item->patron_name; ?></p></td>
                 <td><p><?php echo $item->title ?></p></td>
                 <td><p><?php echo $item->call_number ?></p></td>
-                <td><p <?=($overdue ? 'class="text-danger"' : '')?>><?php echo date('l F jS Y', $item->due) ?></p></td>
+                <td><p <?php echo ($overdue ? 'class="text-danger"' : '')?>><?php echo date('l F jS Y', $item->due); ?></p></td>
             </tr>
             <?php
         }
