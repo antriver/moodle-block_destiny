@@ -67,7 +67,7 @@ foreach ($idnumbers as $idnumber => $name) {
             <tr>
                 <th><?php echo get_string('patron_column_heading', 'block_destiny'); ?></th>
                 <th><?php echo get_string('item_title_column_heading', 'block_destiny'); ?></th>
-                <th><?php echo get_string('call_number_column_heading', 'block_destiny'); ?>r</th>
+                <th><?php echo get_string('call_number_column_heading', 'block_destiny'); ?></th>
                 <th><?php echo get_string('due_date_column_heading', 'block_destiny'); ?></th>
             </tr>
         </thead>
