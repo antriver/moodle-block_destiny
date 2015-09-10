@@ -22,7 +22,7 @@
 
 require_once(dirname(dirname(dirname(__FILE__))) .  '/config.php');
 
-// Show page header
+// Show page header.
 $PAGE->set_context(context_system::instance());
 $PAGE->set_url('/blocks/destiny');
 $PAGE->set_title(get_string('page_title', 'block_destiny'));
@@ -32,12 +32,10 @@ echo $OUTPUT->header();
 
 require_login();
 
-// Create Destiny access object
+// Create Destiny access object.
 $destiny = new \block_destiny\local\destiny();
 
-/**
- * Who are we going to show...
- */
+// Who are we going to show...
 $idnumbers = $destiny->get_idnumbers();
 
 if (count($idnumbers) > 1) {

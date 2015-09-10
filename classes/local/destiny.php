@@ -32,7 +32,8 @@ class destiny
     private $db = null;
 
     /**
-     * Connect to database and return a PDO object
+     * Connect to the Destiny database.
+     * @return boolean
      */
     private function connect_to_database() {
 
@@ -52,6 +53,8 @@ class destiny
         );
         $this->db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         $this->db->setAttribute(PDO::ATTR_DEFAULT_FETCH_MODE, PDO::FETCH_OBJ);
+
+        return true;
     }
 
     /**
@@ -68,19 +71,19 @@ class destiny
         global $USER;
         $idnumbers = array();
 
-        // Include the current user
+        // Include the current user.
         if ($includecurrentuser && $USER->idnumber) {
             $idnumbers[$USER->idnumber] = $USER->firstname . ' '. $USER->lastname;
         }
 
-        // If the current user has children, include them too
+        // If the current user has children, include them too.
         if ($includechildren && $children = $this->get_users_children($USER->id)) {
             foreach ($children as $child) {
                 $idnumbers[$child->idnumber] = $child->firstname . ' '. $child->lastname;
             }
         }
 
-        // Require at least one idnumber
+        // Require at least one idnumber.
         if (empty($idnumbers)) {
             throw new Exception(get_string('no_id_number', 'block_destiny'));
         }

@@ -29,13 +29,17 @@ $string['no_id_number'] = 'Your account does not have an idnumber set.';
 $string['intro_text'] = 'Listed below are your checked out library resources.';
 $string['multiple_intro_text'] = 'Listed below are your family\'s checked out library resources.';
 
-// Table headings
+/**
+ * Table headings
+ */
 $string['patron_column_heading'] = 'Patron';
 $string['item_title_column_heading'] = 'Item Title';
 $string['call_number_column_heading'] = 'Call Number';
 $string['due_date_column_heading'] = 'Due Date';
 
-// Admin settings
+/**
+ * Admin settings
+ */
 $string['settings_db_host_title'] = 'Destiny Database Host';
 $string['settings_db_host_desc'] = '';
 

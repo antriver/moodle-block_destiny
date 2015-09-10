@@ -23,6 +23,6 @@
 defined('MOODLE_INTERNAL') || die();
 
 $plugin->version = 2015081400;
-$plugin->requires = 2013111800; // MOODLE_26_STABLE
+$plugin->requires = 2013111800; // MOODLE_26_STABLE.
 $plugin->release = '1.0';
 $plugin->component = 'block_destiny';
