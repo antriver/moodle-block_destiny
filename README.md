@@ -1,4 +1,4 @@
-# Follett Destiny Moodle Integration
+# Moodle Destiny Library Integration
 Show checked out books in Folett Software's Destiny library system on Moodle.
 
 ## Compatibility
