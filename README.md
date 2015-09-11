@@ -1,8 +1,8 @@
 # Moodle Destiny Library Integration
 Show checked out books in Folett Software's Destiny library system on Moodle.
 
-## Compatibility
-Tested with Moodle 2.8.3
+## Screenshots
+![Screenshot of checked out items](https://www.classroomtechtools.com/assets/img/moodle-plugin-screenshots/block_destiny/1.png)
 
 ## Setup
 
