@@ -125,12 +125,7 @@ class destiny
               AND c.contextlevel = " . \CONTEXT_USER, array($userid));
         return $records;
     }
-
-    /**
-     * Performs a SELECT query on the Destiny databaseand returns an array of the result objects
-     *
-     */
-
+    
     /**
      * Performs a SELECT query on the Destiny databaseand returns an array of the result objects
      *

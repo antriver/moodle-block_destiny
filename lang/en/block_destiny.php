@@ -16,7 +16,7 @@
 
 /**
  * English language string for Destiny block
- * 
+ *
  * @package    block_destiny
  * @copyright  2015 Anthony Kuske <www.anthonykuske.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
