@@ -15,6 +15,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Version for Destiny block
+ *
  * @package    block_destiny
  * @copyright  2015 Anthony Kuske <www.anthonykuske.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -22,7 +24,8 @@
 
 defined('MOODLE_INTERNAL') || die();
 
-$plugin->version = 2015081400;
+/** @var stdClass $plugin */
+$plugin->version = 2016020400;
 $plugin->requires = 2013111800; // MOODLE_26_STABLE.
 $plugin->release = '1.0';
 $plugin->component = 'block_destiny';

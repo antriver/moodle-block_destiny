@@ -27,8 +27,18 @@ namespace block_destiny\local;
 use Exception;
 use PDO;
 
+/**
+ * Class to fetch data from Destiny database
+ *
+ * @package    block_destiny
+ * @copyright  2015 Anthony Kuske <www.anthonykuske.com>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 class destiny
 {
+    /**
+     * @var PDO
+     */
     private $db = null;
 
     /**

@@ -15,6 +15,8 @@
 // along with Moodle.  If not, see <http://www.gnu.org/licenses/>.
 
 /**
+ * Destiny block
+ *
  * @package    block_destiny
  * @copyright  2015 Anthony Kuske <www.anthonykuske.com>
  * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
@@ -22,8 +24,20 @@
 
 defined('MOODLE_INTERNAL') || die();
 
+/**
+ * Destiny block
+ *
+ * @package    block_destiny
+ * @copyright  2015 Anthony Kuske <www.anthonykuske.com>
+ * @license    http://www.gnu.org/copyleft/gpl.html GNU GPL v3 or later
+ */
 class block_destiny extends block_base
 {
+    /**
+     * Setup the block
+     *
+     * @throws coding_exception
+     */
     public function init() {
         $this->title = get_string('pluginname', 'block_destiny');
     }
