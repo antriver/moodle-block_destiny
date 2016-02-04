@@ -125,7 +125,7 @@ class destiny
               AND c.contextlevel = " . \CONTEXT_USER, array($userid));
         return $records;
     }
-    
+
     /**
      * Performs a SELECT query on the Destiny databaseand returns an array of the result objects
      *
@@ -149,6 +149,7 @@ class destiny
     private function get_select_sql() {
 
         return "SELECT
+            cpy.CopyID AS 'copy_id',
             pat.FirstName + ' ' + pat.LastName AS 'patron_name',
             pat.DistrictID AS 'patron_districtid',
             sitepat.PatronBarcode AS 'patron_barcode',
@@ -182,6 +183,14 @@ class destiny
 
         $sql = $this->get_select_sql();
         $sql .= 'AND pat.DistrictID = ?';
-        return $this->select($sql, array($userdistrictid));
+        $rows = $this->select($sql, array($userdistrictid));
+
+        // Workaround to not have to use GROUP BY in query (MSSQL is weird about it).
+        $results = [];
+        foreach ($rows as $row) {
+            $results[$row->copy_id] = $row;
+        }
+
+        return $results;
     }
 }
